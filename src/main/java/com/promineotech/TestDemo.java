@@ -19,7 +19,7 @@ public class TestDemo {
         return random.nextInt(10) + 1;
     }
 
-    // Returns the square of a random number
+    // Returns the square of any random number
     public int randomNumberSquared() {
         int num = getRandomInt();
         return num * num;

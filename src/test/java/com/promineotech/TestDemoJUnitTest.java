@@ -36,6 +36,7 @@ class TestDemoJUnitTest {
     static Stream<Arguments> argumentsForAddPositive() {
         return Stream.of(
             arguments(2, 4, 6, false),
+//            you can use 2 and -4 to see the error
             arguments(1, 1, 2, false),
             arguments(0, 4, 0, true),
             arguments(2, -4, 0, true),
