@@ -7,7 +7,6 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -35,29 +34,22 @@ class TestDemoJUnitTest {
     }
 
     static Stream<Arguments> argumentsForAddPositive() {
-        // @formatter:off
         return Stream.of(
-            arguments(2, 4, 6, false),    // Test case for two positive numbers
-            arguments(1, 1, 2, false),     // Another test case for two positive numbers
-            arguments(0, 4, 0, true),     // Test case where 'a' is zero
-            arguments(2, -4, 0, true),    // Test case where 'b' is negative
-            arguments(-1, -1, 0, true)    // Test case where both are negative
+            arguments(2, 4, 6, false),
+            arguments(1, 1, 2, false),
+            arguments(0, 4, 0, true),
+            arguments(2, -4, 0, true),
+            arguments(-1, -1, 0, true)
         );
-        // @formatter:on
     }
 
     @Test
     void assertThatNumberSquaredIsCorrect() {
-        // Use spy to create a partial mock of the testDemo object
         TestDemo mockDemo = spy(testDemo);
-
-        // Tell the spy to return 5 whenever getRandomInt() is called
         doReturn(5).when(mockDemo).getRandomInt();
 
-        // Call the method on the mocked object
         int fiveSquared = mockDemo.randomNumberSquared();
 
-        // Assert that the result is 25 (5 * 5)
         assertThat(fiveSquared).isEqualTo(25);
     }
 }
